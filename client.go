@@ -1,12 +1,11 @@
 package jpush
 
 import (
-	"fmt"
 	"encoding/base64"
-	"runtime"
-	"net/http"
-	"io/ioutil"
+	"fmt"
 	"io"
+	"net/http"
+	"runtime"
 )
 
 type Client struct {
@@ -52,7 +51,7 @@ func (c *Client) request(method, link string, body io.Reader, isGroup bool) (*Re
 		return nil, err
 	}
 	defer resp.Body.Close()
-	buf, err := ioutil.ReadAll(resp.Body)
+	buf, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return nil, err
 	}

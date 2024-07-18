@@ -30,11 +30,11 @@ type PushNotification struct {
 type NotificationAndroid struct {
 	Alert      string                 `json:"alert"`
 	Title      string                 `json:"title,omitempty"`
-	BuilderId  int                    `json:"builder_id,int,omitempty"`
+	BuilderId  int                    `json:"builder_id,omitempty"`
 	Priority   int                    `json:"priority,omitempty"`
 	Category   string                 `json:"category,omitempty"`
-	Style      int                    `json:"style,int,omitempty"`
-	AlertType  int                    `json:"alert_type,int,omitempty"`
+	Style      int                    `json:"style,omitempty"`
+	AlertType  int                    `json:"alert_type,omitempty"`
 	BigText    string                 `json:"big_text,omitempty"`
 	Inbox      map[string]interface{} `json:"inbox,omitempty"`
 	BigPicPath string                 `json:"big_pic_path,omitempty"`
@@ -45,7 +45,7 @@ type NotificationAndroid struct {
 type NotificationIOS struct {
 	Alert            interface{}            `json:"alert"`
 	Sound            string                 `json:"sound,omitempty"`
-	Badge            int                    `json:"badge,int,omitempty"`
+	Badge            int                    `json:"badge,omitempty"`
 	ContentAvailable bool                   `json:"content-available,omitempty"`
 	MutableContent   bool                   `json:"mutable-content,omitempty"`
 	Category         string                 `json:"category,omitempty"`
@@ -68,16 +68,16 @@ type PushMessage struct {
 
 type SmsMessage struct {
 	Content   string `json:"content"`
-	DelayTime int    `json:"delay_time,int,omitempty"`
+	DelayTime int    `json:"delay_time,omitempty"`
 }
 
 type PushOptions struct {
-	SendNo          int    `json:"sendno,int,omitempty"`
-	TimeToLive      int    `json:"time_to_live,int,omitempty"`
-	OverrideMsgId   int64  `json:"override_msg_id,int64,omitempty"`
+	SendNo          int    `json:"sendno,omitempty"`
+	TimeToLive      int    `json:"time_to_live,omitempty"`
+	OverrideMsgId   int64  `json:"override_msg_id,omitempty"`
 	ApnsProduction  bool   `json:"apns_production"`
 	ApnsCollapseId  string `json:"apns_collapse_id,omitempty"`
-	BigPushDuration int    `json:"big_push_duration,int,omitempty"`
+	BigPushDuration int    `json:"big_push_duration,omitempty"`
 }
 
 type PushRequest struct {

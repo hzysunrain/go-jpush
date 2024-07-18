@@ -28,6 +28,6 @@ type ScheduleTriggerPeriodical struct {
 	End       string      `json:"end,omitempty"`
 	Time      string      `json:"time,omitempty"`
 	TimeUnit  string      `json:"time_unit,omitempty"`
-	Frequency int         `json:"frequency,int,omitempty"`
+	Frequency int         `json:"frequency,omitempty"`
 	Point     interface{} `json:"point,omitempty"`
 }
