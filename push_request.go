@@ -77,12 +77,73 @@ type SmsMessage struct {
 }
 
 type PushOptions struct {
-	SendNo          int    `json:"sendno,omitempty"`
-	TimeToLive      int    `json:"time_to_live,omitempty"`
-	OverrideMsgId   int64  `json:"override_msg_id,omitempty"`
-	ApnsProduction  bool   `json:"apns_production"`
-	ApnsCollapseId  string `json:"apns_collapse_id,omitempty"`
-	BigPushDuration int    `json:"big_push_duration,omitempty"`
+	SendNo            int               `json:"sendno,omitempty"`
+	TimeToLive        int               `json:"time_to_live,omitempty"`
+	OverrideMsgId     int64             `json:"override_msg_id,omitempty"`
+	ApnsProduction    bool              `json:"apns_production"`
+	ApnsCollapseId    string            `json:"apns_collapse_id,omitempty"`
+	BigPushDuration   int               `json:"big_push_duration,omitempty"`
+	Classification    int               `json:"classification,omitempty"`
+	ThirdPartyChannel ThirdPartyChannel `json:"third_party_channel,omitempty"`
+}
+
+type ThirdPartyChannel struct {
+	Asus   Asus   `json:"asus,omitempty"`
+	Fcm    Fcm    `json:"fcm,omitempty"`
+	Honor  Honor  `json:"honor,omitempty"`
+	Meizu  Meizu  `json:"meizu,omitempty"`
+	Oppo   Oppo   `json:"oppo,omitempty"`
+	Vivo   Vivo   `json:"vivo,omitempty"`
+	Xiaomi Xiaomi `json:"xiaomi,omitempty"`
+	Huawei Huawei `json:"huawei,omitempty"`
+}
+
+type Asus struct {
+	Distribution    string `json:"distribution,omitempty"`
+	DistributionFcm string `json:"distribution_fcm,omitempty"`
+}
+
+type Fcm struct {
+	Distribution    string `json:"distribution,omitempty"`
+	DistributionFcm string `json:"distribution_fcm,omitempty"`
+}
+
+type Honor struct {
+	Distribution    string `json:"distribution,omitempty"`
+	DistributionFcm string `json:"distribution_fcm,omitempty"`
+}
+
+type Meizu struct {
+	Distribution    string `json:"distribution,omitempty"`
+	DistributionFcm string `json:"distribution_fcm,omitempty"`
+}
+
+type Oppo struct {
+	Distribution    string `json:"distribution,omitempty"`
+	DistributionFcm string `json:"distribution_fcm,omitempty"`
+}
+
+type Vivo struct {
+	Distribution    string `json:"distribution,omitempty"`
+	DistributionFcm string `json:"distribution_fcm,omitempty"`
+}
+
+type Xiaomi struct {
+	ChannelId       string `json:"channel_id,omitempty"`
+	Distribution    string `json:"distribution,omitempty"`
+	DistributionFcm string `json:"distribution_fcm,omitempty"`
+	SkipQuota       bool   `json:"skip_quota,omitempty"`
+}
+
+type Huawei struct {
+	Category        string `json:"category,omitempty"`
+	ChannelId       string `json:"channel_id,omitempty"`
+	Distribution    string `json:"distribution,omitempty"`
+	DistributionFcm string `json:"distribution_fcm,omitempty"`
+	Importance      string `json:"importance,omitempty"`
+	ReceiptId       string `json:"receipt_id,omitempty"`
+	SkipQuota       bool   `json:"skip_quota,omitempty"`
+	TargetUserType  int    `json:"target_user_type,omitempty"`
 }
 
 type PushRequest struct {
