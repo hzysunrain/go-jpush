@@ -10,6 +10,10 @@ const (
 	PlatformWinPhone Platform = "winphone"
 )
 
+type PushIntent struct {
+	Url string `json:"url,omitempty"`
+}
+
 type PushAudience struct {
 	Tag            []string `json:"tag,omitempty"`
 	TagAnd         []string `json:"tag_and,omitempty"`
@@ -40,6 +44,7 @@ type NotificationAndroid struct {
 	BigPicPath string                 `json:"big_pic_path,omitempty"`
 	Extras     map[string]interface{} `json:"extras,omitempty"`
 	ChannelId  string                 `json:"channel_id,omitempty"`
+	Intent     PushIntent             `json:"intent,omitempty"`
 }
 
 type NotificationIOS struct {
