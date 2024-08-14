@@ -144,6 +144,8 @@ type Huawei struct {
 	ReceiptId       string `json:"receipt_id,omitempty"`
 	SkipQuota       bool   `json:"skip_quota,omitempty"`
 	TargetUserType  int    `json:"target_user_type,omitempty"`
+	DefaultSound    bool   `json:"default_sound,omitempty"`
+	Sound           string `json:"sound,omitempty"`
 }
 
 type PushRequest struct {
